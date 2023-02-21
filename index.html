@@ -1,157 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <link rel="stylesheet" href="./css/home.css">
-</head>
-<body>
+    <link
+
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/home.css" />
+  </head>
+  <body>
     <div class="container">
-
-<nav class="navbar">
-
-    <ul class="list">
-      
-        <li  class=" list-li logo">
+      <nav class="navbar">
+        <ul class="list">
+          <li class=" list-li logo">
             <a href="#"> socialapp</a>
-
-        </li>
-        <li  class=" list-li">
+          </li>
+          <li class=" list-li">
             <a href="#">home</a>
-
-        </li>
-        <li  class=" list-li">
+          </li>
+          <li class=" list-li">
             <a href="#">profile</a>
-
-        </li>
-    </ul>
-    <div class="bars">
-        <i class="fa-solid fa-bars"></i>
-    </div>
-    <div class="nav-buttons  ">
-        <button class="btn" id="register">register</button>
-        <button class="btn" id="login">login</button>
-    </div>
-</nav>
-<div id="posts">
-    <div class="post">
-
-<div class="header">
-    <img id="img-user" src="./images/avatar.png" alt="">
-    <p id user-name> mustafa eisa</p>
-</div>
-<img  id='img-post' src="./images/course-03.jpg" alt="">
-
-<small id="timePost">
-    2 minut ago
-</small>
- <p id="post-content">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. A libero sunt maxime omnis saepe laboriosam doloremque numquam aspernatur quas, officiis aliquam, inventore ipsum architecto alias quia! Accusamus quidem est et!
-
- </p>
- <div class="comments">
-    <i class="fa-solid fa-comment"></i>
-    <span id="commentNumber">3</span>
-    <small>comments</small>
-
- </div>
-    </div>
-    <div class="post">
-
-        <div class="header">
-            <img id="img-user" src="./images/avatar.png" alt="">
-            <p id user-name> mustafa eisa</p>
+          </li>
+        </ul>
+        <div class="bars">
+          <i class="fa-solid fa-bars"></i>
         </div>
-        <img  id='img-post' src="./images/course-03.jpg" alt="">
-        
-        <small id="timePost">
-            2 minut ago
-        </small>
-         <p id="post-content">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. A libero sunt maxime omnis saepe laboriosam doloremque numquam aspernatur quas, officiis aliquam, inventore ipsum architecto alias quia! Accusamus quidem est et!
-        
-         </p>
-         <div class="comments">
-            <i class="fa-solid fa-comment"></i>
-            <span id="commentNumber">3</span>
-            <small>comments</small>
-        
-         </div>
-            </div>
-            <div class="post">
-
-                <div class="header">
-                    <img id="img-user" src="./images/avatar.png" alt="">
-                    <p id user-name> mustafa eisa</p>
-                </div>
-                <img  id='img-post' src="./images/course-03.jpg" alt="">
-                
-                <small id="timePost">
-                    2 minut ago
-                </small>
-                 <p id="post-content">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. A libero sunt maxime omnis saepe laboriosam doloremque numquam aspernatur quas, officiis aliquam, inventore ipsum architecto alias quia! Accusamus quidem est et!
-                
-                 </p>
-                 <div class="comments">
-                    <i class="fa-solid fa-comment"></i>
-                    <span id="commentNumber">3</span>
-                    <small>comments</small>
-                
-                 </div>
-                    </div>
-                    <div class="post">
-
-                        <div class="header">
-                            <img id="img-user" src="./images/avatar.png" alt="">
-                            <p id user-name> mustafa eisa</p>
-                        </div>
-                        <img  id='img-post' src="./images/course-03.jpg" alt="">
-                        
-                        <small id="timePost">
-                            2 minut ago
-                        </small>
-                         <p id="post-content">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. A libero sunt maxime omnis saepe laboriosam doloremque numquam aspernatur quas, officiis aliquam, inventore ipsum architecto alias quia! Accusamus quidem est et!
-                        
-                         </p>
-                         <div class="comments">
-                            <i class="fa-solid fa-comment"></i>
-                            <span id="commentNumber">3</span>
-                            <small>comments</small>
-                        
-                         </div>
-                            </div>
-                            <div class="post">
-
-                                <div class="header">
-                                    <img id="img-user" src="./images/avatar.png" alt="">
-                                    <p id user-name> mustafa eisa</p>
-                                </div>
-                                <img  id='img-post' src="./images/course-03.jpg" alt="">
-                                
-                                <small id="timePost">
-                                    2 minut ago
-                                </small>
-                                 <p id="post-content">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. A libero sunt maxime omnis saepe laboriosam doloremque numquam aspernatur quas, officiis aliquam, inventore ipsum architecto alias quia! Accusamus quidem est et!
-                                
-                                 </p>
-                                 <div class="comments">
-                                    <i class="fa-solid fa-comment"></i>
-                                    <span id="commentNumber">3</span>
-                                    <small>comments</small>
-                                
-                                 </div>
-                                    </div>
-</div>
-
+        <div class="nav-buttons  ">
+          <button class="btn" id="register">register</button>
+          <button class="btn" id="login">login</button>
+        </div>
+      </nav>
+      <div id="posts">
+      
     </div>
- 
-</body>
-<script src="./javascript/home.js"></script>
+    <div class="modul-login">
+        <div class="login-content">
+            <label for="user">enter username</label>
+            <input  id="user-name"   type="text" placeholder=" user name">
+            <label for="password">enter password</label>
+            <input type="password"  id=" password" placeholder=" password">
+
+
+            <div class="butttons">
+                <button class=" login " id="login">login</button>
+                <button class=" close" id="close">close</button>
+            </div>
+            <button class=" postionX">X</button>
+        </div>
+    </div>
+  </body>
+  <script src="./javascript/home.js"></script>
 </html>
