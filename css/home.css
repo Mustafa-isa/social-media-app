@@ -59,13 +59,13 @@ color: #000;
 .btn{
 
 outline: none;
-border: 0;
+border:  1px solid #4c3d3d;
  width: 100px;
  text-align: center;
  padding: 10px;
  margin-right: 10px;
- color: #FFF;
- background-color: #007bff;
+ background-color: transparent;
+ color: #000;
  border-radius: 5px;
 
 cursor: pointer;
@@ -75,8 +75,12 @@ transition: 1s;
     
 }
 .btn:focus{
-    transform: scale(.95);
-     background: #dcb9b9;
+    outline-color: transparent;
+    outline-style:solid;
+    box-shadow: 0 0 0 4px #5a01a7;
+    transition: 0.7s;
+    background-color: #4c3d3d;
+    color: #FFF;
 }
 
 
@@ -110,7 +114,7 @@ margin: auto;
          padding-top: 40px;
          transform: translateY(-200%);
 top: 50px;
-transition: 1s;
+transition:.4s;
 left: 0;
 right: 0;
 
@@ -126,7 +130,7 @@ right: 0;
 .showBTN{
     transform:
      translateY(0%);
-transition: 1s;
+transition: .4s;
 
 }
 
@@ -140,6 +144,7 @@ transition: 1s;
 padding: 10px;
 background-color: #fff;
 margin:  20px  auto;
+border-radius: 10px;
 
 }
 #img-user{
@@ -163,8 +168,10 @@ margin:  20px  auto;
 }
 #img-post{
     display: block;
-height: 220px;
+height: 280px;
     width: 100%;
+    border-radius: 10px;
+    border: 1px solid #4c3d3d;
 
 }
 #timePost{
@@ -191,7 +198,7 @@ height: 220px;
     align-items: center;
     opacity: 0;
     transform: scale(0);
-    transition:  .5s;
+    transition:  .3s;
 }
 .modul-show{
     opacity: 1;
@@ -209,7 +216,7 @@ height: 220px;
     width: 300px;
     position: relative;
     transform: translateY(-200%);
-    transition: 2S ease-out;
+    transition: 1S ease-out;
 }
 .login-show{
     transform: translateX(0%);
@@ -265,17 +272,80 @@ transition: .3s;
 border-radius: 5px;
 
 }
-
+.login-content .butttons{
+    text-align: right;
+    border-top:  1px solid #b7adad;
+    width: 100%;
+    margin-top: 10px;
+    
+}
+.login-content h4{
+    padding: 10px;
+    border-bottom: 1px solid #79738566;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 5px;
+}
 .login-content .butttons button:hover{
-background-color: #dcb9b9;
+background-color: #272222;
+color: #fff;
+
 }
 .login-content .butttons button:focus{
     transform: scale(.95);
 }
 
 .x{
-    transition: 3s;
+    transition: .4s;
 }
 .y{
-    transition: 2s;
+    transition: .3s;
+}
+.messageForValidating{
+    position: absolute;
+    top: 40%;
+    left :7%;
+background: #fff;
+padding: 20px;
+border-radius: 10px;
+transform: translateX(-200%);
+transition: 1s;
+z-index: 11002;
+
+
+}
+.messageForValidating.showMessage{
+transform: translateX(0%);
+
+}
+
+.meesageContent{
+    font-size: 12px;
+    text-transform: capitalize;
+
+color: rgb(206, 112, 112);
+
+}
+.sucessLofgin{
+    position: absolute;
+    top: 10px;
+padding: 10px;
+width: 280px;
+text-align: center;
+border-radius: 10px;
+transform: translateY(-200%);
+z-index: 6666;
+    left: 20px;
+    height: 50px;
+    background-color: #fff;
+transform: 3s;
+}
+.sucessLofgin h4{
+    text-transform:capitalize;
+    color: rgb(9, 89, 9);
+}
+.sucessLofgin.msg{
+transform: translateY(0%);
+
+
 }
