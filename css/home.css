@@ -349,3 +349,25 @@ transform: translateY(0%);
 
 
 }
+#logOut{
+    outline: 0;
+    padding: 8px;
+
+    margin: 10px;
+    background-color: #fff;
+    border:  1px solid #dcb9b9;
+    width: 70px;
+cursor: pointer;
+color: #fff;
+background-color: #3454;
+color: #272222;
+text-transform: capitalize;
+
+transition: .3s;
+border-radius: 5px;
+}
+#logOut:hover{
+    background-color: #4a0505;
+ 
+    color: #FFF;
+}

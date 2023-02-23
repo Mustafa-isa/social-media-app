@@ -7,6 +7,43 @@ let close = document.getElementById("close");
 let loginBtn = document.getElementById("loginBtn");
 let dat = [];
 let id
+function loginIn(){
+  loginContent.classList.add("login-show");
+  modulLogin.classList.add("modul-show");
+}
+function loginOut(userData){
+
+setTimeout(function(){
+  let nav = document.querySelector(".nav-buttons");
+  nav.classList.remove("showBTN");
+  loginContent.classList.remove("login-show");
+  modulLogin.classList.remove("modul-show");
+},2000)
+
+
+let navBar = document.querySelector(".nav-buttons")
+navBar.innerHTML = `<button id='logOut'>login out</button>`
+let logOutBtn = document.getElementById('logOut')
+logOutBtn.addEventListener('click' ,() =>{
+localStorage.removeItem('userData')
+
+let login = document.querySelector(".sucessLofgin");
+let h4 = login.querySelector("h4");
+h4.innerText = `you have logged Out`;
+h4.style.color = "red";
+login.classList.add("msg");
+setTimeout(function () {
+  login.classList.remove("msg");
+}, 4000);
+setTimeout(function(){
+  navBar.innerHTML =` <button class="btn" id="register">register</button>
+  <button class="btn" id="login" onclick='loginIn()' >login</button>`
+
+},2000)
+})
+
+
+}
 function failLogin() {
   let login = document.querySelector(".sucessLofgin");
   let h4 = login.querySelector("h4");
@@ -78,8 +115,7 @@ ${datum.body}
 renderPosts();
 //events on login
 login.addEventListener("click", () => {
-  loginContent.classList.add("login-show");
-  modulLogin.classList.add("modul-show");
+loginIn()
 });
 
 postionX.addEventListener("click", () => {
@@ -132,8 +168,8 @@ loginBtn.addEventListener("click", () => {
       });
 
     // ma;e nav bar like login out
+    checkUser();
   }
-  checkUser();
 });
 //check user if exist or not
 function checkUser() {
@@ -141,7 +177,10 @@ function checkUser() {
 console.log(data)
   if (data[0] === id) {
     successLogin();
-  } else {
+    loginOut(data)
+    
+  }
+   else {
     failLogin();
   }
 }
