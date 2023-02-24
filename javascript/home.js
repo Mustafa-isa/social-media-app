@@ -6,43 +6,38 @@ let postionX = document.querySelector(".postionX");
 let close = document.getElementById("close");
 let loginBtn = document.getElementById("loginBtn");
 let dat = [];
-let id
-function loginIn(){
+let id;
+function loginIn() {
   loginContent.classList.add("login-show");
   modulLogin.classList.add("modul-show");
 }
-function loginOut(userData){
+function loginOut(userData) {
+  setTimeout(function () {
+    let nav = document.querySelector(".nav-buttons");
+    nav.classList.remove("showBTN");
+    loginContent.classList.remove("login-show");
+    modulLogin.classList.remove("modul-show");
+  }, 2000);
 
-setTimeout(function(){
-  let nav = document.querySelector(".nav-buttons");
-  nav.classList.remove("showBTN");
-  loginContent.classList.remove("login-show");
-  modulLogin.classList.remove("modul-show");
-},2000)
+  let navBar = document.querySelector(".nav-buttons");
+  navBar.innerHTML = `<button id='logOut'>login out</button>`;
+  let logOutBtn = document.getElementById("logOut");
+  logOutBtn.addEventListener("click", () => {
+    localStorage.removeItem("userData");
 
-
-let navBar = document.querySelector(".nav-buttons")
-navBar.innerHTML = `<button id='logOut'>login out</button>`
-let logOutBtn = document.getElementById('logOut')
-logOutBtn.addEventListener('click' ,() =>{
-localStorage.removeItem('userData')
-
-let login = document.querySelector(".sucessLofgin");
-let h4 = login.querySelector("h4");
-h4.innerText = `you have logged Out`;
-h4.style.color = "red";
-login.classList.add("msg");
-setTimeout(function () {
-  login.classList.remove("msg");
-}, 4000);
-setTimeout(function(){
-  navBar.innerHTML =` <button class="btn" id="register">register</button>
-  <button class="btn" id="login" onclick='loginIn()' >login</button>`
-
-},2000)
-})
-
-
+    let login = document.querySelector(".sucessLofgin");
+    let h4 = login.querySelector("h4");
+    h4.innerText = `you have logged Out`;
+    h4.style.color = "red";
+    login.classList.add("msg");
+    setTimeout(function () {
+      login.classList.remove("msg");
+    }, 4000);
+    setTimeout(function () {
+      navBar.innerHTML = ` <button class="btn" id="register">register</button>
+  <button class="btn" id="login" onclick='loginIn()' >login</button>`;
+    }, 2000);
+  });
 }
 function failLogin() {
   let login = document.querySelector(".sucessLofgin");
@@ -115,7 +110,7 @@ ${datum.body}
 renderPosts();
 //events on login
 login.addEventListener("click", () => {
-loginIn()
+  loginIn();
 });
 
 postionX.addEventListener("click", () => {
@@ -160,7 +155,7 @@ loginBtn.addEventListener("click", () => {
       )
       .then((res) => {
         const token = res.data.token;
-        id = res.data.token
+        id = res.data.token;
         const user = res.data.user;
         dat = [token, user];
         console.log(dat);
@@ -173,14 +168,12 @@ loginBtn.addEventListener("click", () => {
 });
 //check user if exist or not
 function checkUser() {
-  let data = JSON.parse(localStorage.getItem("userData"))
-console.log(data)
+  let data = JSON.parse(localStorage.getItem("userData"));
+  console.log(data);
   if (data[0] === id) {
     successLogin();
-    loginOut(data)
-    
-  }
-   else {
+    loginOut(data);
+  } else {
     failLogin();
   }
 }
