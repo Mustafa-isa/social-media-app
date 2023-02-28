@@ -73,7 +73,7 @@ bars.addEventListener("click", () => {
 //##################################################################################
 // render posts before registertion
 function renderPosts() {
-  const url = `https://tarmeezacademy.com/api/v1/posts?limit=3`;
+  const url = `https://tarmeezacademy.com/api/v1/posts?limit=14`;
 
   axios.get(url).then((res) => {
     let data = res.data.data;
@@ -98,7 +98,8 @@ ${datum.body}
 <div class="comments">
   <i class="fa-solid fa-comment"></i>
   <span id="commentNumber">${datum.comments_count}</span>
-  <small>comments</small>
+ <span>coomments</span>
+
 </div>
 </div>
 
@@ -177,3 +178,5 @@ function checkUser() {
     failLogin();
   }
 }
+
+
