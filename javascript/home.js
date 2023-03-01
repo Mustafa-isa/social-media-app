@@ -217,6 +217,7 @@ registerinto.onclick =function(){
     .then(res =>{
       console.log(res.data)
       localStorage.setItem("register" ,JSON.stringify(res.data))
+      console.log("i love you from console hhh")
 
     })
  
