@@ -191,24 +191,38 @@ registerContianer.classList.add('show')
 registerLayer.classList.add("show")
 let userName =document.getElementById('userName')
 let name =document.getElementById('name')
-let password =document.getElementById('password')
+let pass =document.querySelector('.pass')
 let registerinto = document.getElementById('registerinto')
-let close = document.getElementById('close')
-let postionX = document.querySelector(".postionX")
+let close = document.getElementById('closeinto')
+let postionX = document.querySelector(".x")
 console.log(userName ,name ,registerinto ,close ,postionX)
 registerinto.onclick =function(){
-  if (password.value == "" || name.value == "" || userName.value == '') {
+  if (  name.value == "" || userName.value == '') {
     let msg = document.querySelector(".messageForValidating");
     msg.classList.add("showMessage");
     setTimeout(function () {
       msg.classList.remove("showMessage");
     }, 3000);
-  registerContianer.querySelector('input').style.outline ="2px solid rgb(206, 112, 112)"
-  
+  userName.style.outline = '2px solid red'
+  pass.style.outline = '2px solid red'
+  name.style.outline = '2px solid red'
   }else{
+    userName.style.outline = 'none'
+    pass.style.outline =' none'
+    name.style.outline =' none'
 
-
-    console.log(userName.value ,password.value ,name.value)
+    console.log(userName.value ,pass.value ,name.value)
   }
-})
+}
+close.onclick =function(){
+
+  registerContianer.classList.remove('show')
+  registerLayer.classList.remove("show")
+
+}
+postionX.onclick =function(){
+
+  registerContianer.classList.remove('show')
+  registerLayer.classList.remove("show")
+}
 })
