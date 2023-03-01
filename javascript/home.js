@@ -5,6 +5,7 @@ let loginContent = document.querySelector(".login-content");
 let postionX = document.querySelector(".postionX");
 let close = document.getElementById("close");
 let loginBtn = document.getElementById("loginBtn");
+let register = document.getElementById('register')
 let dat = [];
 let id;
 function loginIn() {
@@ -178,5 +179,3 @@ function checkUser() {
     failLogin();
   }
 }
-
-
