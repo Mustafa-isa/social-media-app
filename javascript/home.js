@@ -35,7 +35,7 @@ function loginOut(userData) {
       login.classList.remove("msg");
     }, 4000);
     setTimeout(function () {
-      navBar.innerHTML = ` <button class="btn" id="register">register</button>
+      navBar.innerHTML = ` <button class="btn" id="register" onclick ="registerNow()">register</button>
   <button class="btn" id="login" onclick='loginIn()' >login</button>`;
     }, 2000);
   });
@@ -182,7 +182,8 @@ function checkUser() {
 
 
 //start register new
-register.addEventListener('click' , function(){
+register.addEventListener('click' ,registerNow)
+function registerNow(){
 
 let registerLayer = document.querySelector(".registerLayer")
 let registerContianer = document.querySelector(".registerContianer")
@@ -203,15 +204,22 @@ registerinto.onclick =function(){
     setTimeout(function () {
       msg.classList.remove("showMessage");
     }, 3000);
-  userName.style.outline = '2px solid red'
-  pass.style.outline = '2px solid red'
-  name.style.outline = '2px solid red'
-  }else{
-    userName.style.outline = 'none'
-    pass.style.outline =' none'
-    name.style.outline =' none'
 
-    console.log(userName.value ,pass.value ,name.value)
+  }else{
+   
+    let pars ={
+    "username" : userName.value ,
+    "password" : pass.value,
+    "name" : name.value
+    }
+
+    axios.post('https://tarmeezacademy.com/api/v1/register',pars)
+    .then(res =>{
+      console.log(res.data)
+      localStorage.setItem("register" ,JSON.stringify(res.data))
+
+    })
+ 
   }
 }
 close.onclick =function(){
@@ -225,4 +233,4 @@ postionX.onclick =function(){
   registerContianer.classList.remove('show')
   registerLayer.classList.remove("show")
 }
-})
+}
