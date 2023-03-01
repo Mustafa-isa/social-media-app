@@ -212,7 +212,6 @@ height: 280px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 250px;
     flex-direction: column;
     width: 300px;
     position: relative;
@@ -223,7 +222,7 @@ height: 280px;
     transform: translateX(0%);
 
 }
-.login-content input{
+.login-content input, .registerContianer input{
     outline: 0;
     padding: 10px;
 
@@ -258,7 +257,7 @@ cursor: pointer;
 
 
 }
-.login-content .butttons button{
+ .butttons button{
     outline: 0;
     padding: 8px;
 
@@ -273,7 +272,7 @@ transition: .3s;
 border-radius: 5px;
 
 }
-.login-content .butttons{
+.butttons{
     text-align: right;
     border-top:  1px solid #b7adad;
     width: 100%;
@@ -287,12 +286,12 @@ border-radius: 5px;
     width: 100%;
     margin-bottom: 5px;
 }
-.login-content .butttons button:hover{
+ .butttons button:hover{
 background-color: #272222;
 color: #fff;
 
 }
-.login-content .butttons button:focus{
+ .butttons button:focus{
     transform: scale(.95);
 }
 
@@ -378,4 +377,42 @@ border-radius: 5px;
      color: #fff;
      background-color: #111;
 
+}
+.registerLayer{
+    position: absolute;
+    z-index: 1000;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+ 
+ 
+     background-color: rgba(0, 0, 0, 0.7);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     opacity: 0;
+     transform: scale(0);
+     transition:  .3s;
+}
+.registerLayer .registerContianer{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    flex-direction: column;
+    width: 300px;
+    position: relative;
+    transition: 1S ease-out;
+    transform:  translateX(-300%);
+}
+.registerContianer.show{
+    transform: translateX(0);
+}
+.registerLayer.show{
+    opacity: 1;
+    transform: scale(1);
 }

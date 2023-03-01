@@ -179,3 +179,36 @@ function checkUser() {
     failLogin();
   }
 }
+
+
+//start register new
+register.addEventListener('click' , function(){
+
+let registerLayer = document.querySelector(".registerLayer")
+let registerContianer = document.querySelector(".registerContianer")
+//add classes to show register modul
+registerContianer.classList.add('show')
+registerLayer.classList.add("show")
+let userName =document.getElementById('userName')
+let name =document.getElementById('name')
+let password =document.getElementById('password')
+let registerinto = document.getElementById('registerinto')
+let close = document.getElementById('close')
+let postionX = document.querySelector(".postionX")
+console.log(userName ,name ,registerinto ,close ,postionX)
+registerinto.onclick =function(){
+  if (password.value == "" || name.value == "" || userName.value == '') {
+    let msg = document.querySelector(".messageForValidating");
+    msg.classList.add("showMessage");
+    setTimeout(function () {
+      msg.classList.remove("showMessage");
+    }, 3000);
+  registerContianer.querySelector('input').style.outline ="2px solid rgb(206, 112, 112)"
+  
+  }else{
+
+
+    console.log(userName.value ,password.value ,name.value)
+  }
+})
+})
